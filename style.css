@@ -54,7 +54,7 @@ padding: 0px;
 
 /* Opacity; display = block/none; visibility = visibile/invisible */
 
-.slide1 {
+#slide1 {
     position: relative; 
     /* visibility: visible;  */
     display: block; 
@@ -70,7 +70,7 @@ padding: 0px;
 
   }
 
-  .slide2, .slide3, .slide4, .slide5, .slide6, .slide7, .slide8 {
+  #slide2, #slide3, #slide4, #slide5, #slide6, #slide7, #slide8 {
     position: relative; /* Sit on top of the page content */
     /* visibility: hidden; */
     display: none; /* Hidden by default */

@@ -26,25 +26,27 @@ var correctButton4 = document.querySelector("#correct-button4");
 var correctButton5 = document.querySelector("#correct-button5");
 var wrongButton = document.querySelectorAll("#button");
 var button = document.querySelector(".button");
+var backButton = document.querySelector("#Go-back-button");
+var clearButton = document.querySelector("#Clear-Highscore-button");
+
 var assessment1 = document.querySelector(".assessment1");
 var assessment2 = document.querySelector(".assessment2");
 var assessment3 = document.querySelector(".assessment3");
 var assessment4 = document.querySelector(".assessment4");
 var assessment5 = document.querySelector(".assessment5");
 
+var secondsLeft = 75;
 
-var secondsLeft = 30;
+var slide1 = document.querySelector("#slide1");
+var slide2 = document.querySelector("#slide2");
+var slide3 = document.querySelector("#slide3");
+var slide4 = document.querySelector("#slide4");
+var slide5 = document.querySelector("#slide5");
+var slide6 = document.querySelector("#slide6");
+var slide7 = document.querySelector("#slide7");
+var slide8 = document.querySelector("#slide8");
 
-var slide1 = document.querySelector(".slide1");
-var slide2 = document.querySelector(".slide2");
-var slide3 = document.querySelector(".slide3");
-var slide4 = document.querySelector(".slide4");
-var slide5 = document.querySelector(".slide5");
-var slide6 = document.querySelector(".slide6");
-var slide7 = document.querySelector(".slide7");
-var slide8 = document.querySelector(".slide8");
-
-var slide = [];
+var slide = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
 
 // slide[0] = document.getElementById("slide1");
 // slide[1] = document.getElementById("slide2");
@@ -57,8 +59,8 @@ var slide = [];
 
 
 startButton.addEventListener("click", function changePage() {
-  document.querySelector(".slide1").style.display = "none";
-  document.querySelector(".slide2").style.display = "block";
+  document.querySelector("#slide1").style.display = "none";
+  document.querySelector("#slide2").style.display = "block";
     
   function setTime() {
     var timerInterval = setInterval(function() {
@@ -77,6 +79,13 @@ startButton.addEventListener("click", function changePage() {
 
 if (document.querySelector("#correct-button1").addEventListener) {
 
+    document.querySelector("#correct-button1").addEventListener("click", function changePage1() {
+
+      document.querySelector("#slide2").style.display = "none";
+      document.querySelector("#slide3").style.display = "block";
+
+    });
+
   document.querySelector("#correct-button1").addEventListener("click", function correct1() {
 
     // Create a <p> node
@@ -90,12 +99,6 @@ if (document.querySelector("#correct-button1").addEventListener) {
  
     });
 
-    // document.querySelector("#correct-button1").addEventListener("click", function changePage1() {
-
-    //   document.querySelector(".slide2").style.display = "none";
-    //   document.querySelector(".slide3").style.display = "block";
-
-    // });
 
   }
 
@@ -111,10 +114,47 @@ var textnodeWrong = document.createTextNode("Wrong!");
 node.appendChild(textnodeWrong);                              
 document.querySelector(".assessment1").appendChild(node);
 
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
 });
 
 }
 
+
+if (wrongButton.addEventListener) {
+
+  for (i = 0; i < slide.length; i++) {
+
+  }
+
+}
+
+scoreContainer.addEventListener("click", function changePage1() {
+
+  document.querySelector("#slide1").style.display = "none";
+  document.querySelector("#slide2").style.display = "none";
+  document.querySelector("#slide3").style.display = "none";
+  document.querySelector("#slide4").style.display = "none";
+  document.querySelector("#slide5").style.display = "none";
+  document.querySelector("#slide6").style.display = "none";
+  document.querySelector("#slide7").style.display = "none";
+  document.querySelector("#slide8").style.display = "block";
+
+});
+
+backButton.addEventListener("click", function homePage() {
+
+  document.querySelector("#slide1").style.display = "block";
+  document.querySelector("#slide2").style.display = "none";
+  document.querySelector("#slide3").style.display = "none";
+  document.querySelector("#slide4").style.display = "none";
+  document.querySelector("#slide5").style.display = "none";
+  document.querySelector("#slide6").style.display = "none";
+  document.querySelector("#slide7").style.display = "none";
+  document.querySelector("#slide8").style.display = "none";
+
+});
 
 // function on() {
 //     slide2.style.display = "block";
