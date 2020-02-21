@@ -117,6 +117,11 @@ document.querySelector(".assessment1").appendChild(node);
   secondsLeft -=10;
   timeContainer.textContent = "Time: " + secondsLeft;
 
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+    // sendMessage();
+  }
+
 });
 
 }
