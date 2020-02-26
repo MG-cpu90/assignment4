@@ -9,9 +9,17 @@ h1 {
   margin: 15px;
 }
 
+ul, .assessment1, .assessment2, .assessment3, .assessment4, .assessment5 {
+  list-style: none;
+}
+
 .main-headings-container {
   margin: 15px;
   padding: 15px;
+}
+
+.button-container, .form-container, .form-inline, .text-container, .next-page1, .next-page2, .next-page3, .next-page4, .next-page5 {
+  text-align: center;
 }
 
 .score {
@@ -83,7 +91,6 @@ padding: 0px;
     background-color: #FFFFFF(0,0,0,0.5); /* White background with opacity */
     z-index: 7; /* Specify a stack order in case you're using a different order for other elements */
     text-align: center;
-
   }
 
   .button {

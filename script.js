@@ -1,18 +1,3 @@
-var dataTypesQ1 = ["strings", "booleans", "alerts", "numbers"];
-var correctAnswer1 = dataTypesQ1[2];
-
-var conditionQ2 = ["quotes", "curly brackets", "parentheses", "square brackets"];
-var correctAnswer2 = conditionQ2[2];
-
-var arraysQ3 = ["numbers and strings", "other arrays", "booleans", "all of the above"];
-var correctAnswer3 = arraysQ3[3];
-
-var stringValuesQ4 = ["commas", "curly brackets", "quotes", "parantheses"];
-var correctAnswer4 = stringValuesQ4[2];
-
-var debuggingQ5 = ["JavaScript", "terminal/bash", "for loops", "console.log"];
-var correctAnswer5 = debuggingQ5[3];
-
 var timeContainer = document.querySelector(".time");
 var timer = document.querySelector(".timer");
 var scoreContainer = document.querySelector(".score");
@@ -28,6 +13,9 @@ var wrongButton = document.querySelectorAll("#button");
 var button = document.querySelector(".button");
 var backButton = document.querySelector("#Go-back-button");
 var clearButton = document.querySelector("#Clear-Highscore-button");
+var form = document.querySelector("form-inline");
+var scoreList = document.querySelector("#score-list");
+var score = [];
 
 var assessment1 = document.querySelector(".assessment1");
 var assessment2 = document.querySelector(".assessment2");
@@ -48,94 +36,451 @@ var slide8 = document.querySelector("#slide8");
 
 var slide = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8];
 
-// slide[0] = document.getElementById("slide1");
-// slide[1] = document.getElementById("slide2");
-// slide[2] = document.getElementById("slide3");
-// slide[3] = document.getElementById("slide4");
-// slide[4] = document.getElementById("slide5");
-// slide[5] = document.getElementById("slide6");
-// slide[6] = document.getElementById("slide7");
-// slide[7] = document.getElementById("slide8");
+// Create a <li> node
+  var node = document.createElement("LI"); 
+
+// Create a "right" text node                
+  var textnodeRight = document.createTextNode(" Correct! ");  
+
+// Create a "wrong" text node                
+  var textnodeWrong = document.createTextNode(" Wrong! ");  
+
+  var timerInterval;
 
 
+// Start quiz
 startButton.addEventListener("click", function changePage() {
   document.querySelector("#slide1").style.display = "none";
   document.querySelector("#slide2").style.display = "block";
     
+
+  // Set timer
   function setTime() {
-    var timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
       secondsLeft--;
       timeContainer.textContent = "Time: " + secondsLeft;
-  
+
       if(secondsLeft === 0) {
         clearInterval(timerInterval);
-        // sendMessage();
       }
   
     }, 1000);
   }
   setTime();
+
 });
 
+
+
+// Slide 1
+// Correct
 if (document.querySelector("#correct-button1").addEventListener) {
-
-    document.querySelector("#correct-button1").addEventListener("click", function changePage1() {
-
-      document.querySelector("#slide2").style.display = "none";
-      document.querySelector("#slide3").style.display = "block";
-
-    });
 
   document.querySelector("#correct-button1").addEventListener("click", function correct1() {
 
-    // Create a <p> node
-    var node = document.createElement("P"); 
-    // Create a text node                
-    var textnodeWrong = document.createTextNode("Correct!");         
-
     // Append the text to <li>
-    node.appendChild(textnodeWrong);                              
-    document.querySelector(".assessment1").appendChild(node);
+    node.appendChild(textnodeRight);                              
+    document.querySelector(".assessment1ul").appendChild(node);
  
     });
 
-
   }
+// Wrong
+if (document.querySelector("#button1").addEventListener) {
 
-else if (wrongButton.addEventListener) {
-  wrongButton.addEventListener("click", function wrong1() {
-
-// Create a <p> node
-var node = document.createElement("P"); 
-// Create a text node                
-var textnodeWrong = document.createTextNode("Wrong!");         
+  document.querySelector("#button1").addEventListener("click", function wrong1() {
 
 // Append the text to <li>
 node.appendChild(textnodeWrong);                              
-document.querySelector(".assessment1").appendChild(node);
+document.querySelector(".assessment1ul").appendChild(node);
 
   secondsLeft -=10;
   timeContainer.textContent = "Time: " + secondsLeft;
 
   if(secondsLeft === 0) {
     clearInterval(timerInterval);
-    // sendMessage();
   }
 
 });
 
 }
 
+if (document.querySelector("#button2").addEventListener) {
+  document.querySelector("#button2").addEventListener("click", function wrong2() {
 
-if (wrongButton.addEventListener) {
+// Append the text to <li>
+document.querySelector(".assessment1ul").appendChild(textnodeWrong);
 
-  for (i = 0; i < slide.length; i++) {
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
 
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
   }
+
+});
 
 }
 
-scoreContainer.addEventListener("click", function changePage1() {
+if (document.querySelector("#button4").addEventListener) {
+  document.querySelector("#button4").addEventListener("click", function wrong4() {
+
+// Append the text to <li>
+document.querySelector(".assessment1ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+// Change to Slide 2
+
+document.querySelector("#next1").addEventListener("click", function changePage1() {
+
+  document.querySelector("#slide2").style.display = "none";
+  document.querySelector("#slide3").style.display = "block";
+
+});
+
+// Slide 2
+// Correct
+if (document.querySelector("#correct-button2").addEventListener) {
+
+  document.querySelector("#correct-button2").addEventListener("click", function correct2() {
+
+    // Append the text to <li>
+document.querySelector(".assessment2ul").appendChild(textnodeRight);
+
+ 
+    });
+
+  }
+
+// Wrong
+if (document.querySelector("#button5").addEventListener) {
+
+  document.querySelector("#button5").addEventListener("click", function wrong5() {
+
+// Append the text to <li>
+document.querySelector(".assessment2ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+if (document.querySelector("#button6").addEventListener) {
+  document.querySelector("#button6").addEventListener("click", function wrong6() {
+
+  // Append the text to <li>
+  document.querySelector(".assessment2ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+if (document.querySelector("#button8").addEventListener) {
+  document.querySelector("#button8").addEventListener("click", function wrong8() {
+
+  // Append the text to <li>
+  document.querySelector(".assessment2ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+// Change to Slide 3
+
+document.querySelector("#next2").addEventListener("click", function changePage2() {
+
+  document.querySelector("#slide3").style.display = "none";
+  document.querySelector("#slide4").style.display = "block";
+
+});
+
+// Slide 3
+// Correct
+if (document.querySelector("#correct-button3").addEventListener) {
+
+  document.querySelector("#correct-button3").addEventListener("click", function correct3() {
+
+    // Append the text to <li>
+document.querySelector(".assessment3ul").appendChild(textnodeRight);
+
+    });
+
+  }
+
+// Wrong
+if (document.querySelector("#button9").addEventListener) {
+
+  document.querySelector("#button9").addEventListener("click", function wrong9() {
+
+// Append the text to <li>
+document.querySelector(".assessment3ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+if (document.querySelector("#button10").addEventListener) {
+  document.querySelector("#button10").addEventListener("click", function wrong10() {
+
+  // Append the text to <li>
+  document.querySelector(".assessment3ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+if (document.querySelector("#button11").addEventListener) {
+  document.querySelector("#button11").addEventListener("click", function wrong11() {
+
+  // Append the text to <li>
+  document.querySelector(".assessment3ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+// Change to Slide 4
+
+document.querySelector("#next3").addEventListener("click", function changePage3() {
+
+  document.querySelector("#slide4").style.display = "none";
+  document.querySelector("#slide5").style.display = "block";
+
+});
+
+// Slide 4
+// Correct
+if (document.querySelector("#correct-button4").addEventListener) {
+
+  document.querySelector("#correct-button4").addEventListener("click", function correct4() {
+
+    // Append the text to <li>
+document.querySelector(".assessment4ul").appendChild(textnodeRight);
+
+ 
+    });
+
+  }
+
+// Wrong
+if (document.querySelector("#button13").addEventListener) {
+
+  document.querySelector("#button13").addEventListener("click", function wrong13() {
+
+// Append the text to <li>
+document.querySelector(".assessment4ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+if (document.querySelector("#button14").addEventListener) {
+  document.querySelector("#button14").addEventListener("click", function wrong14() {
+
+  // Append the text to <li>
+  document.querySelector(".assessment4ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+if (document.querySelector("#button16").addEventListener) {
+  document.querySelector("#button16").addEventListener("click", function wrong16() {
+
+  // Append the text to <li>
+  document.querySelector(".assessment4ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+// Change to Slide 5
+
+document.querySelector("#next4").addEventListener("click", function changePage4() {
+
+  document.querySelector("#slide5").style.display = "none";
+  document.querySelector("#slide6").style.display = "block";
+
+});
+
+// Slide 5
+// Correct
+if (document.querySelector("#correct-button5").addEventListener) {
+
+  document.querySelector("#correct-button5").addEventListener("click", function correct4() {
+
+    // Append the text to <li>
+document.querySelector(".assessment5ul").appendChild(textnodeRight);
+
+ 
+    });
+
+  }
+
+// Wrong
+if (document.querySelector("#button17").addEventListener) {
+
+  document.querySelector("#button17").addEventListener("click", function wrong17() {
+
+// Append the text to <li>
+document.querySelector(".assessment5ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+if (document.querySelector("#button18").addEventListener) {
+  document.querySelector("#button18").addEventListener("click", function wrong18() {
+
+  // Append the text to <li>
+  document.querySelector(".assessment5ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+if (document.querySelector("#button19").addEventListener) {
+  document.querySelector("#button19").addEventListener("click", function wrong19() {
+
+  // Append the text to <li>
+  document.querySelector(".assessment5ul").appendChild(textnodeWrong);
+
+  secondsLeft -=10;
+  timeContainer.textContent = "Time: " + secondsLeft;
+
+  if(secondsLeft === 0) {
+    clearInterval(timerInterval);
+  }
+
+});
+
+}
+
+// Change to Slide 6
+
+document.querySelector("#next5").addEventListener("click", function changePage5() {
+
+  document.querySelector("#slide6").style.display = "none";
+  document.querySelector("#slide7").style.display = "block";
+  
+  // stop the timer
+  clearInterval(timerInterval);
+  
+  // Append the time/score text to <p>                             
+  document.querySelector(".span").textContent=secondsLeft;
+
+});
+
+// Submit high score
+
+// When form is submitted...
+document.querySelector("#submit-button").addEventListener("click", function(event){
+  event.preventDefault();
+  document.querySelector(".Form-inline").submit();
+
+});
+
+// Append score
+  // Create a <li> node
+  var nodeScore = document.createElement("LI");
+
+  // Create a text node
+  var textnodeScore = document.createTextNode(secondsLeft);
+
+  // Append the text to <li>
+  nodeScore.appendChild(textnodeScore);
+
+  // Append <li> to <ul>
+  document.querySelector(".high-scores-list").appendChild(nodeScore);
+
+// Change to High Scores page
+scoreContainer.addEventListener("click", function scorePage() {
 
   document.querySelector("#slide1").style.display = "none";
   document.querySelector("#slide2").style.display = "none";
@@ -145,9 +490,9 @@ scoreContainer.addEventListener("click", function changePage1() {
   document.querySelector("#slide6").style.display = "none";
   document.querySelector("#slide7").style.display = "none";
   document.querySelector("#slide8").style.display = "block";
-
 });
 
+// Change to home page
 backButton.addEventListener("click", function homePage() {
 
   document.querySelector("#slide1").style.display = "block";
@@ -161,12 +506,11 @@ backButton.addEventListener("click", function homePage() {
 
 });
 
-// function on() {
-//     slide2.style.display = "block";
-//   }
-  
-//   function off() {
-//     slide1.style.display = "none";
-//   }
+// Remove score
 
-  // function on();
+document.querySelector("#Clear-Highscore-button").addEventListener("click", function scorePage() {
+
+  var scoreEL = document.querySelector(".high-scores-list.li");
+  scoreEL.parentNode.removeChild(scoreEL);
+
+});
