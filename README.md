@@ -42,3 +42,7 @@
 * I was also unable to write a function that would determine that a user would receive a score of 0 if none of the responses were clicked
 
 * I was unable to clean up the JavaScript and HTML code so as to avoid so much lengthy repetition
+
+## Links
+* Deployed URL link: https://mg-cpu90.github.io/assignment4/
+* GitHub Repository link: https://github.com/MG-cpu90/assignment4

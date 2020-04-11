@@ -22,6 +22,7 @@ ul, .assessment1, .assessment2, .assessment3, .assessment4, .assessment5 {
   text-align: center;
 }
 
+
 .score {
   position: relative; /* Sit on top of the page content */
   left: 25px;
