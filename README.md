@@ -6,19 +6,46 @@
 
 * The landing page contains: 
 
-* * Instructions
+    * Instructions
 
-* * A link to a "high-scores" page 
+    * A link to a "high-scores" page 
 
-* * A button that will lead to the next page to staart the quiz
+    * A button that will lead to the next page to staart the quiz
 
 * Each of the subsequnt five pages has four questions which should all be completed within the time limit of 75 seconds; 
 
-* * When a user clicks on the correct response, the text "correct" will appear below the buttons
+    * When a user clicks on the correct response, the text "correct" will appear below the buttons
 
-* * When a user clicks on the incorrect response, the text "wrong" will appear below the buttons, and 10 seconds will be subtracted from the timer
+    * When a user clicks on the incorrect response, the text "wrong" will appear below the buttons, and 10 seconds will be subtracted from the timer
 
 * The final page takes the user's time and lists it as their score, and includes a form for them to submit their initials and inclue their score in the "high-scores" page
+
+
+## Usage
+### User Story
+
+```
+AS A coding bootcamp student
+I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
+SO THAT I can gauge my progress compared to my peers
+```
+
+### Acceptance Criteria
+
+```
+GIVEN I am taking a code quiz
+WHEN I click the start button
+THEN a timer starts and I am presented with a question
+WHEN I answer a question
+THEN I am presented with another question
+WHEN I answer a question incorrectly
+THEN time is subtracted from the clock
+WHEN all questions are answered or the timer reaches 0
+THEN the game is over
+WHEN the game is over
+THEN I can save my initials and score
+```
+
 
 ## Successes
 
